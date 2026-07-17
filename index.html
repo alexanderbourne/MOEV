@@ -161,6 +161,23 @@
   footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;}
   footer a{color:#c9ccd1;text-decoration:underline;}
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1007730871873038');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1007730871873038&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -331,6 +348,9 @@
   if (params.get('reserved') === '1') {
     status.textContent = "You're in! Check your email for a receipt — we'll be in touch as sourcing and testing progress.";
     status.style.color = '#7CFFB2';
+    if (typeof fbq === 'function') {
+      fbq('track', 'Purchase', { currency: 'AUD', value: 100.00, content_name: 'Moev Founding Member Deposit' });
+    }
   } else if (params.get('canceled') === '1') {
     status.textContent = 'Checkout was canceled — no charge was made. Reserve whenever you\'re ready.';
   }
@@ -341,6 +361,9 @@
     var originalText = btn.textContent;
     btn.textContent = 'Redirecting to secure checkout…';
     status.textContent = '';
+    if (typeof fbq === 'function') {
+      fbq('track', 'InitiateCheckout', { currency: 'AUD', value: 100.00, content_name: 'Moev Founding Member Deposit' });
+    }
 
     fetch('/api/create-checkout-session', { method: 'POST' })
       .then(function (r) {
