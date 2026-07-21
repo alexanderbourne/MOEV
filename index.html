@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Moev — The Everyday Back-Support Exoskeleton</title>
 <meta name="description" content="Moev is a lightweight, motor-free exoskeleton that helps take the load off your lower back when lifting, bending, and carrying. Reserve yours with a fully refundable deposit.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231b1f23'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23ff5a1f' stroke-width='2.5'/%3E%3Cline x1='16' y1='7' x2='16' y2='25' stroke='%23ff5a1f' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='16' r='2.5' fill='%23ff5a1f'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231b1f23'/%3E%3Cpath d='M13 7H7v18h6' stroke='%23ff5a1f' stroke-width='2.8' fill='none' stroke-linecap='round'/%3E%3Cpath d='M19 7h6v18h-6' stroke='%23ff5a1f' stroke-width='2.8' fill='none' stroke-linecap='round'/%3E%3Cline x1='16' y1='10' x2='16' y2='22' stroke='%23ff5a1f' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>
   :root{
     --charcoal:#1b1f23;
@@ -184,11 +184,10 @@ src="https://www.facebook.com/tr?id=1007730871873038&ev=PageView&noscript=1"
 <header>
   <div class="wrap">
     <div class="logo">
-      <svg width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect width="32" height="32" rx="8" fill="#2b3036"/>
-        <circle cx="16" cy="16" r="10" fill="none" stroke="#ff5a1f" stroke-width="2.5"/>
-        <line x1="16" y1="7" x2="16" y2="25" stroke="#ff5a1f" stroke-width="2.5"/>
-        <circle cx="16" cy="16" r="2.5" fill="#ff5a1f"/>
+      <svg width="30" height="30" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M11 0H0v34h11" stroke="#ff5a1f" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+        <path d="M23 0h11v34H23" stroke="#ff5a1f" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+        <line x1="17" y1="7" x2="17" y2="27" stroke="#ff5a1f" stroke-width="5.5" stroke-linecap="round"/>
       </svg>
       mo<span>ev</span>
     </div>
@@ -208,50 +207,54 @@ src="https://www.facebook.com/tr?id=1007730871873038&ev=PageView&noscript=1"
       <div class="hero-note">Founding member price $500 (est. retail $699) · Fully refundable anytime before production ships</div>
     </div>
     <div class="hero-visual">
-      <svg viewBox="0 0 360 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a person wearing the Moev back-support frame">
+      <svg viewBox="0 0 360 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of the Moev back-support frame">
         <defs>
-          <linearGradient id="skinGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#3a4048"/>
-            <stop offset="1" stop-color="#2b3036"/>
+          <linearGradient id="heroSteel" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#9198a2"/>
+            <stop offset="45%" stop-color="#e8ebef"/>
+            <stop offset="55%" stop-color="#e8ebef"/>
+            <stop offset="100%" stop-color="#9198a2"/>
+          </linearGradient>
+          <linearGradient id="heroOrangeGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ff8a52"/>
+            <stop offset="100%" stop-color="#c8430f"/>
           </linearGradient>
         </defs>
-        <!-- ground shadow -->
-        <ellipse cx="180" cy="398" rx="90" ry="10" fill="#000" opacity="0.25"/>
-        <!-- legs -->
-        <rect x="150" y="290" width="24" height="100" rx="10" fill="#454b53"/>
-        <rect x="190" y="290" width="24" height="100" rx="10" fill="#454b53"/>
-        <!-- torso -->
-        <path d="M138 150 Q180 132 226 150 L232 292 Q180 312 132 292 Z" fill="url(#skinGrad)"/>
-        <!-- head -->
-        <circle cx="182" cy="104" r="34" fill="#454b53"/>
-        <!-- arms -->
-        <path d="M138 168 Q104 200 100 250 Q98 268 112 270 Q126 268 128 250 Q132 210 156 182 Z" fill="#3a4048"/>
-        <path d="M228 168 Q262 200 266 250 Q268 268 254 270 Q240 268 238 250 Q234 210 210 182 Z" fill="#3a4048"/>
-        <!-- exo frame: spine bar -->
-        <rect x="172" y="140" width="16" height="150" rx="7" fill="#ff5a1f"/>
-        <!-- shoulder straps -->
-        <path d="M172 150 Q140 138 128 168" stroke="#ff5a1f" stroke-width="10" fill="none" stroke-linecap="round"/>
-        <path d="M188 150 Q220 138 232 168" stroke="#ff5a1f" stroke-width="10" fill="none" stroke-linecap="round"/>
-        <!-- waist belt -->
-        <rect x="134" y="268" width="94" height="20" rx="10" fill="#ff5a1f"/>
-        <!-- hip anchors -->
-        <circle cx="148" cy="278" r="9" fill="#e04710"/>
-        <circle cx="214" cy="278" r="9" fill="#e04710"/>
-        <!-- leg support struts -->
-        <path d="M150 288 L142 340" stroke="#ff5a1f" stroke-width="8" stroke-linecap="round"/>
-        <path d="M214 288 L222 340" stroke="#ff5a1f" stroke-width="8" stroke-linecap="round"/>
-        <!-- labels -->
-        <text x="20" y="150" fill="#9aa0a8" font-size="11" font-family="Arial">SHOULDER</text>
-        <text x="20" y="163" fill="#9aa0a8" font-size="11" font-family="Arial">STRAPS</text>
-        <line x1="80" y1="152" x2="140" y2="152" stroke="#5b6169" stroke-width="1"/>
-        <text x="252" y="200" fill="#9aa0a8" font-size="11" font-family="Arial">SPINE</text>
-        <text x="252" y="213" fill="#9aa0a8" font-size="11" font-family="Arial">SUPPORT BAR</text>
-        <line x1="250" y1="203" x2="190" y2="203" stroke="#5b6169" stroke-width="1"/>
-        <text x="20" y="282" fill="#9aa0a8" font-size="11" font-family="Arial">WAIST</text>
-        <text x="20" y="295" fill="#9aa0a8" font-size="11" font-family="Arial">BELT</text>
-        <line x1="70" y1="283" x2="134" y2="283" stroke="#5b6169" stroke-width="1"/>
+        <g transform="translate(180,210) scale(0.72)">
+          <ellipse cx="0" cy="270" rx="170" ry="22" fill="#000" opacity="0.3"/>
+          <!-- shoulder straps -->
+          <g stroke-linecap="round" fill="none">
+            <path d="M-14 -190 Q-110 -160 -140 -70 Q-150 -30 -142 20" stroke="#c8430f" stroke-width="34"/>
+            <path d="M-14 -190 Q-110 -160 -140 -70 Q-150 -30 -142 20" stroke="#ff5a1f" stroke-width="26"/>
+            <path d="M14 -190 Q110 -160 140 -70 Q150 -30 142 20" stroke="#c8430f" stroke-width="34"/>
+            <path d="M14 -190 Q110 -160 140 -70 Q150 -30 142 20" stroke="#ff5a1f" stroke-width="26"/>
+          </g>
+          <!-- shoulder buckles -->
+          <rect x="-158" y="6" width="34" height="26" rx="6" fill="#2b3036"/>
+          <rect x="124" y="6" width="34" height="26" rx="6" fill="#2b3036"/>
+          <!-- spine bar -->
+          <rect x="-15" y="-210" width="30" height="380" rx="14" fill="url(#heroSteel)"/>
+          <circle cx="0" cy="-60" r="16" fill="#9198a2"/>
+          <circle cx="0" cy="-60" r="9" fill="#e8ebef"/>
+          <circle cx="0" cy="60" r="16" fill="#9198a2"/>
+          <circle cx="0" cy="60" r="9" fill="#e8ebef"/>
+          <!-- waist belt -->
+          <path d="M-150 148 Q0 190 150 148 L150 196 Q0 236 -150 196 Z" fill="url(#heroOrangeGrad)"/>
+          <rect x="-30" y="164" width="60" height="34" rx="8" fill="#2b3036"/>
+          <rect x="-22" y="172" width="44" height="18" rx="4" fill="#e8ebef"/>
+          <!-- hip anchors -->
+          <circle cx="-140" cy="172" r="17" fill="#c8430f"/>
+          <circle cx="-140" cy="172" r="9" fill="#e8ebef"/>
+          <circle cx="140" cy="172" r="17" fill="#c8430f"/>
+          <circle cx="140" cy="172" r="9" fill="#e8ebef"/>
+          <!-- thigh straps -->
+          <path d="M-130 190 Q-160 240 -140 268" stroke="#ff5a1f" stroke-width="20" fill="none" stroke-linecap="round"/>
+          <path d="M130 190 Q160 240 140 268" stroke="#ff5a1f" stroke-width="20" fill="none" stroke-linecap="round"/>
+          <rect x="-160" y="256" width="30" height="22" rx="5" fill="#2b3036"/>
+          <rect x="130" y="256" width="30" height="22" rx="5" fill="#2b3036"/>
+        </g>
       </svg>
-      <div class="caption">Concept illustration of the Moev frame — real product photography will replace this once sample units arrive.</div>
+      <div class="caption">Illustration of the Moev support frame — real product photography will replace this once sample units arrive.</div>
     </div>
   </div>
 </section>
