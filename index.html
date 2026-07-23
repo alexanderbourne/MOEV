@@ -5,26 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Moev — The Everyday Back-Support Exoskeleton</title>
 <meta name="description" content="Moev is a lightweight, motor-free exoskeleton that helps take the load off your lower back when lifting, bending, and carrying. Reserve yours with a fully refundable deposit.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%230b1d33'/%3E%3Ctext x='24' y='32' text-anchor='middle' font-family='Arial' font-weight='800' font-size='20' fill='%23c9a227'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231b1f23'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23ff5a1f' stroke-width='2.5'/%3E%3Cline x1='16' y1='7' x2='16' y2='25' stroke='%23ff5a1f' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='16' r='2.5' fill='%23ff5a1f'/%3E%3C/svg%3E">
 <style>
   :root{
-    --navy:#0b1d33;
-    --navy-light:#132a45;
-    --navy-lighter:#1c3a5e;
-    --gold:#c9a227;
-    --gold-light:#e6c65c;
-    --gold-dark:#8a6a15;
-    --teal:#178f7c;
-    --cream:#f7f5f1;
-    --ink:#111827;
-    --muted:#6b7280;
+    --charcoal:#1b1f23;
+    --charcoal-light:#2b3036;
+    --orange:#ff5a1f;
+    --orange-dark:#e04710;
+    --cream:#f6f4f0;
+    --gray:#6b7280;
     --line:#e5e2dc;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   button{font-family:inherit;}
   body{
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    color:var(--ink);
+    color:var(--charcoal);
     background:var(--cream);
     line-height:1.5;
   }
@@ -33,49 +29,48 @@
   .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
   .btn{
     display:inline-block;
-    background:linear-gradient(135deg,var(--gold-light),var(--gold));
-    color:var(--navy);
-    font-weight:800;
+    background:var(--orange);
+    color:#fff;
+    font-weight:700;
     font-size:17px;
     padding:16px 32px;
     border-radius:8px;
     text-decoration:none;
     border:none;
     cursor:pointer;
-    transition:transform .15s ease, box-shadow .2s ease;
+    transition:background .15s ease;
   }
-  .btn:hover{transform:translateY(-1px);box-shadow:0 10px 26px rgba(201,162,39,.35);}
+  .btn:hover{background:var(--orange-dark);}
   .btn-block{display:block;width:100%;text-align:center;}
   .eyebrow{
     text-transform:uppercase;
     letter-spacing:.08em;
     font-size:13px;
     font-weight:700;
-    color:var(--gold-dark);
+    color:var(--orange);
   }
-  .eyebrow.on-dark{color:var(--gold-light);}
 
   .tabbar{height:44px;background:#000;display:flex;align-items:center;justify-content:center;gap:8px;position:relative;z-index:60;}
   .tabbar a{font-size:12.5px;font-weight:700;color:#9aa0a8;text-decoration:none;padding:7px 16px;border-radius:999px;letter-spacing:.02em;}
-  .tabbar a.active{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--navy);}
+  .tabbar a.active{background:linear-gradient(135deg,#ffb545,var(--orange));color:#1b1f23;}
   .tabbar a:not(.active):hover{color:#fff;}
 
   header{
     position:sticky;top:0;z-index:50;
-    background:var(--navy);
+    background:var(--charcoal);
     color:#fff;
   }
   header .wrap{
     display:flex;align-items:center;justify-content:space-between;
     padding:16px 24px;
   }
-  .logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:21px;letter-spacing:.02em;}
+  .logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:21px;letter-spacing:.01em;}
   .logo svg{display:block;flex-shrink:0;}
-  .logo span{color:var(--gold-light);}
+  .logo span{color:var(--orange);}
   header .btn{padding:10px 20px;font-size:14px;}
 
   .hero{
-    background:radial-gradient(circle at 20% 20%, var(--navy-lighter), var(--navy) 60%);
+    background:var(--charcoal);
     color:#fff;
     padding:56px 0 72px;
   }
@@ -93,50 +88,50 @@
   .hero-cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:14px;}
   .hero-note{font-size:13px;color:#9aa0a8;}
   .hero-visual{
-    background:var(--navy-light);
-    border:1px solid #2a3f5c;
+    background:var(--charcoal-light);
+    border:1px solid #3a4048;
     border-radius:16px;
     aspect-ratio:4/5;
     display:flex;flex-direction:column;align-items:center;justify-content:center;
     text-align:center;
-    color:#8b93a3;
+    color:#7c828a;
     font-size:14px;
     padding:24px;
   }
   .hero-visual svg{width:100%;max-width:260px;height:auto;}
-  .hero-visual .caption{margin-top:14px;font-size:12px;color:#8b93a3;max-width:260px;}
+  .hero-visual .caption{margin-top:14px;font-size:12px;color:#7c828a;max-width:260px;}
 
   .bar{
-    background:var(--navy);color:#dfe2ec;border-top:1px solid #2a3f5c;border-bottom:1px solid #2a3f5c;
+    background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
     padding:18px 0;
   }
   .bar .wrap{
-    display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;font-size:14px;font-weight:600;
+    display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;font-size:14px;color:var(--gray);font-weight:600;
   }
   .bar .wrap div{display:flex;align-items:center;gap:8px;}
 
   section{padding:72px 0;}
   h2{font-size:30px;font-weight:800;margin-bottom:12px;}
-  .section-sub{color:var(--muted);font-size:16px;max-width:620px;margin-bottom:40px;}
+  .section-sub{color:var(--gray);font-size:16px;max-width:620px;margin-bottom:40px;}
 
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
   @media (max-width:760px){ .steps{grid-template-columns:1fr;} }
   .step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px;}
   .step .num{
-    width:36px;height:36px;border-radius:50%;background:var(--gold);color:var(--navy);
+    width:36px;height:36px;border-radius:50%;background:var(--orange);color:#fff;
     display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:16px;
   }
   .step h3{font-size:18px;margin-bottom:8px;}
-  .step p{color:var(--muted);font-size:15px;}
+  .step p{color:var(--gray);font-size:15px;}
 
   .specs{background:#fff;}
   .spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;}
   @media (max-width:760px){ .spec-grid{grid-template-columns:1fr 1fr;} }
   @media (max-width:480px){ .spec-grid{grid-template-columns:1fr;} }
   .spec-cell{background:#fff;padding:24px;}
-  .spec-cell .label{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700;margin-bottom:6px;}
+  .spec-cell .label{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--gray);font-weight:700;margin-bottom:6px;}
   .spec-cell .val{font-size:18px;font-weight:700;}
-  .specs-disclaimer{margin-top:16px;font-size:13px;color:var(--muted);}
+  .specs-disclaimer{margin-top:16px;font-size:13px;color:var(--gray);}
 
   .who{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
   @media (max-width:860px){ .who{grid-template-columns:repeat(2,1fr);} }
@@ -144,13 +139,13 @@
   .who-card .icon{font-size:30px;margin-bottom:10px;}
   .who-card h3{font-size:15px;font-weight:700;}
 
-  .pricing{background:var(--navy);color:#fff;}
+  .pricing{background:var(--charcoal);color:#fff;}
   .price-card{
-    background:var(--navy-light);border:1px solid var(--gold-dark);border-radius:18px;
+    background:var(--charcoal-light);border:1px solid #3a4048;border-radius:18px;
     padding:40px;max-width:520px;margin:0 auto;text-align:center;
   }
   .price-card .badge{
-    display:inline-block;background:rgba(201,162,39,.15);color:var(--gold-light);
+    display:inline-block;background:rgba(255,90,31,.15);color:var(--orange);
     font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
     padding:6px 12px;border-radius:999px;margin-bottom:18px;
   }
@@ -160,14 +155,14 @@
   .price-card .deposit-note{color:#c9ccd1;font-size:14px;margin-bottom:26px;}
   .price-card ul{list-style:none;text-align:left;margin:0 0 28px;color:#dfe1e4;font-size:14px;}
   .price-card li{padding:6px 0;padding-left:26px;position:relative;}
-  .price-card li:before{content:"✓";position:absolute;left:0;color:var(--gold-light);font-weight:800;}
+  .price-card li:before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:800;}
 
   .faq{max-width:760px;margin:0 auto;}
   .faq-item{border-bottom:1px solid var(--line);padding:22px 0;}
   .faq-item h3{font-size:16px;margin-bottom:8px;}
-  .faq-item p{color:var(--muted);font-size:15px;}
+  .faq-item p{color:var(--gray);font-size:15px;}
 
-  footer{background:var(--navy);color:#9aa0a8;padding:36px 0;font-size:13px;}
+  footer{background:var(--charcoal);color:#9aa0a8;padding:36px 0;font-size:13px;}
   footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;}
   footer a{color:#c9ccd1;text-decoration:underline;}
 </style>
@@ -200,27 +195,11 @@ src="https://www.facebook.com/tr?id=1007730871873038&ev=PageView&noscript=1"
 <header>
   <div class="wrap">
     <div class="logo">
-      <svg width="32" height="32" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs>
-          <linearGradient id="goldgHdr" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#f4d572"/>
-            <stop offset="50%" stop-color="#c9a227"/>
-            <stop offset="100%" stop-color="#8a6a15"/>
-          </linearGradient>
-        </defs>
-        <g fill="url(#goldgHdr)">
-          <rect x="21" y="1" width="6" height="9" rx="2"/>
-          <rect x="21" y="38" width="6" height="9" rx="2"/>
-          <rect x="1" y="21" width="9" height="6" rx="2"/>
-          <rect x="38" y="21" width="9" height="6" rx="2"/>
-          <rect x="21" y="1" width="6" height="9" rx="2" transform="rotate(45 24 24)"/>
-          <rect x="21" y="38" width="6" height="9" rx="2" transform="rotate(45 24 24)"/>
-          <rect x="1" y="21" width="9" height="6" rx="2" transform="rotate(45 24 24)"/>
-          <rect x="38" y="21" width="9" height="6" rx="2" transform="rotate(45 24 24)"/>
-          <circle cx="24" cy="24" r="15"/>
-        </g>
-        <circle cx="24" cy="24" r="11" fill="#0b1d33"/>
-        <text x="24" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="16" fill="url(#goldgHdr)">M</text>
+      <svg width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="#2b3036"/>
+        <circle cx="16" cy="16" r="10" fill="none" stroke="#ff5a1f" stroke-width="2.5"/>
+        <line x1="16" y1="7" x2="16" y2="25" stroke="#ff5a1f" stroke-width="2.5"/>
+        <circle cx="16" cy="16" r="2.5" fill="#ff5a1f"/>
       </svg>
       mo<span>ev</span>
     </div>
@@ -231,45 +210,46 @@ src="https://www.facebook.com/tr?id=1007730871873038&ev=PageView&noscript=1"
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow on-dark">Founding Member Pre-Order · Limited Run</div>
+      <div class="eyebrow">Founding Member Pre-Order · Limited Run</div>
       <h1>Take the load off your lower back — no batteries, no motors, just support.</h1>
       <p class="sub">Moev is a lightweight, passive exoskeleton that helps redistribute the strain of lifting, bending, and carrying away from your lower back. Strap in under a minute. Wear it all day.</p>
       <div class="hero-cta-row">
         <a class="btn" href="#reserve">Reserve with a $100 refundable deposit</a>
       </div>
-      <div class="hero-note">Founding member price $500 (est. retail $699) · Fully refundable anytime before production ships</div>
+      <div class="hero-note">Founding member price $1,264 · Fully refundable anytime before production ships</div>
     </div>
     <div class="hero-visual">
-      <svg viewBox="0 0 360 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of the Moev passive support frame">
+      <svg viewBox="0 0 360 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a person wearing the Moev back-support frame">
         <defs>
-          <linearGradient id="moevSteel" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stop-color="#5c6577"/>
-            <stop offset="45%" stop-color="#aab2c4"/>
-            <stop offset="55%" stop-color="#aab2c4"/>
-            <stop offset="100%" stop-color="#5c6577"/>
-          </linearGradient>
-          <linearGradient id="moevGoldGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#e6c65c"/>
-            <stop offset="100%" stop-color="#8a6a15"/>
+          <linearGradient id="skinGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#3a4048"/>
+            <stop offset="1" stop-color="#2b3036"/>
           </linearGradient>
         </defs>
-        <g transform="translate(180,210) scale(0.72)">
-          <ellipse cx="0" cy="270" rx="170" ry="22" fill="#000" opacity="0.35"/>
-          <g stroke-linecap="round" fill="none">
-            <path d="M-14 -190 Q-110 -160 -140 -70 Q-150 -30 -142 20" stroke="#1c3a5e" stroke-width="26"/>
-            <path d="M14 -190 Q110 -160 140 -70 Q150 -30 142 20" stroke="#1c3a5e" stroke-width="26"/>
-          </g>
-          <rect x="-158" y="6" width="34" height="26" rx="6" fill="url(#moevGoldGrad)"/>
-          <rect x="124" y="6" width="34" height="26" rx="6" fill="url(#moevGoldGrad)"/>
-          <rect x="-15" y="-210" width="30" height="380" rx="14" fill="url(#moevSteel)"/>
-          <circle cx="0" cy="-60" r="16" fill="url(#moevGoldGrad)"/>
-          <circle cx="0" cy="60" r="16" fill="url(#moevGoldGrad)"/>
-          <path d="M-150 148 Q0 190 150 148 L150 196 Q0 236 -150 196 Z" fill="#132a45"/>
-          <circle cx="-140" cy="172" r="16" fill="url(#moevGoldGrad)"/>
-          <circle cx="140" cy="172" r="16" fill="url(#moevGoldGrad)"/>
-          <path d="M-130 190 Q-160 240 -140 268" stroke="#1c3a5e" stroke-width="18" fill="none" stroke-linecap="round"/>
-          <path d="M130 190 Q160 240 140 268" stroke="#1c3a5e" stroke-width="18" fill="none" stroke-linecap="round"/>
-        </g>
+        <ellipse cx="180" cy="398" rx="90" ry="10" fill="#000" opacity="0.25"/>
+        <rect x="150" y="290" width="24" height="100" rx="10" fill="#454b53"/>
+        <rect x="190" y="290" width="24" height="100" rx="10" fill="#454b53"/>
+        <path d="M138 150 Q180 132 226 150 L232 292 Q180 312 132 292 Z" fill="url(#skinGrad)"/>
+        <circle cx="182" cy="104" r="34" fill="#454b53"/>
+        <path d="M138 168 Q104 200 100 250 Q98 268 112 270 Q126 268 128 250 Q132 210 156 182 Z" fill="#3a4048"/>
+        <path d="M228 168 Q262 200 266 250 Q268 268 254 270 Q240 268 238 250 Q234 210 210 182 Z" fill="#3a4048"/>
+        <rect x="172" y="140" width="16" height="150" rx="7" fill="#ff5a1f"/>
+        <path d="M172 150 Q140 138 128 168" stroke="#ff5a1f" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <path d="M188 150 Q220 138 232 168" stroke="#ff5a1f" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <rect x="134" y="268" width="94" height="20" rx="10" fill="#ff5a1f"/>
+        <circle cx="148" cy="278" r="9" fill="#e04710"/>
+        <circle cx="214" cy="278" r="9" fill="#e04710"/>
+        <path d="M150 288 L142 340" stroke="#ff5a1f" stroke-width="8" stroke-linecap="round"/>
+        <path d="M214 288 L222 340" stroke="#ff5a1f" stroke-width="8" stroke-linecap="round"/>
+        <text x="20" y="150" fill="#9aa0a8" font-size="11" font-family="Arial">SHOULDER</text>
+        <text x="20" y="163" fill="#9aa0a8" font-size="11" font-family="Arial">STRAPS</text>
+        <line x1="80" y1="152" x2="140" y2="152" stroke="#5b6169" stroke-width="1"/>
+        <text x="252" y="200" fill="#9aa0a8" font-size="11" font-family="Arial">SPINE</text>
+        <text x="252" y="213" fill="#9aa0a8" font-size="11" font-family="Arial">SUPPORT BAR</text>
+        <line x1="250" y1="203" x2="190" y2="203" stroke="#5b6169" stroke-width="1"/>
+        <text x="20" y="282" fill="#9aa0a8" font-size="11" font-family="Arial">WAIST</text>
+        <text x="20" y="295" fill="#9aa0a8" font-size="11" font-family="Arial">BELT</text>
+        <line x1="70" y1="283" x2="134" y2="283" stroke="#5b6169" stroke-width="1"/>
       </svg>
       <div class="caption">Concept illustration of the Moev frame — real product photography will replace this once sample units arrive.</div>
     </div>
@@ -294,7 +274,7 @@ src="https://www.facebook.com/tr?id=1007730871873038&ev=PageView&noscript=1"
       <div class="step">
         <div class="num">1</div>
         <h3>Reserve your spot</h3>
-        <p>Put down a fully refundable $100 deposit to lock in founding member pricing ($500, vs. an estimated $699 retail).</p>
+        <p>Put down a fully refundable $100 deposit to lock in founding member pricing ($1,264 total).</p>
       </div>
       <div class="step">
         <div class="num">2</div>
@@ -347,7 +327,7 @@ src="https://www.facebook.com/tr?id=1007730871873038&ev=PageView&noscript=1"
   <div class="wrap">
     <div class="price-card">
       <div class="badge">Founding member pre-order</div>
-      <div class="price-row"><span class="now">$500</span><span class="was">$699</span></div>
+      <div class="price-row"><span class="now">$1,264</span></div>
       <div class="deposit-note">Reserve today for a $100 deposit — fully refundable anytime before your unit ships</div>
       <ul>
         <li>Locks in founding member pricing</li>
@@ -385,11 +365,7 @@ src="https://www.facebook.com/tr?id=1007730871873038&ev=PageView&noscript=1"
       fbq('track', 'InitiateCheckout', { currency: 'AUD', value: 100.00, content_name: 'Moev Founding Member Deposit' });
     }
 
-    fetch('/api/create-checkout-session', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ product: 'moev' })
-    })
+    fetch('/api/create-checkout-session', { method: 'POST' })
       .then(function (r) {
         if (!r.ok) return r.json().then(function (e) { throw new Error(e.error || 'Checkout failed'); });
         return r.json();
@@ -418,7 +394,7 @@ src="https://www.facebook.com/tr?id=1007730871873038&ev=PageView&noscript=1"
     <div class="faq">
       <div class="faq-item">
         <h3>Is this a finished, shipping product?</h3>
-        <p>Not yet. We're validating demand and finishing supplier sample testing. Your $100 deposit reserves your spot and locks in founding member pricing — it does not commit you to buy. You'll pay the remaining $400 only once production is confirmed, and can request a full refund of your deposit any time before that.</p>
+        <p>Not yet. We're validating demand and finishing supplier sample testing. Your $100 deposit reserves your spot and locks in founding member pricing ($1,264 total) — it does not commit you to buy. You'll pay the remaining $1,164 only once production is confirmed, and can request a full refund of your deposit any time before that.</p>
       </div>
       <div class="faq-item">
         <h3>When will it ship?</h3>
@@ -431,10 +407,6 @@ src="https://www.facebook.com/tr?id=1007730871873038&ev=PageView&noscript=1"
       <div class="faq-item">
         <h3>What sizes does it come in?</h3>
         <p>Moev uses a one-size, fully adjustable frame designed to fit most adult body types. Exact adjustment range will be confirmed after sample testing.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Is there a more powerful version?</h3>
-        <p>Yes — <a href="/pro.html">MOEV Pro</a> is our battery-powered, actuated version for teams that need more than passive support.</p>
       </div>
       <div class="faq-item">
         <h3>Who's behind Moev?</h3>
