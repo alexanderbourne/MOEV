@@ -1,5 +1,5 @@
 // Vercel serverless function — deploy this at: api/submit-lead.js
-// Sends Halo trial-request form submissions to alex.s.bourne@gmail.com via Resend.
+// Sends Moev trial-request form submissions to alex.s.bourne@gmail.com via Resend.
 module.exports = async (req, res) => {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
@@ -26,7 +26,7 @@ module.exports = async (req, res) => {
     const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
     const html = `
-      <h2>New Halo trial request</h2>
+      <h2>New Moev trial request</h2>
       <p><b>Name:</b> ${esc(name)}</p>
       <p><b>Venue:</b> ${esc(venue || '-')}</p>
       <p><b>Email:</b> ${esc(email)}</p>
@@ -42,10 +42,10 @@ module.exports = async (req, res) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Halo Leads <onboarding@resend.dev>',
+        from: 'Moev Leads <onboarding@resend.dev>',
         to: ['alex.s.bourne@gmail.com'],
         reply_to: email,
-        subject: `New Halo trial request — ${venue || name}`,
+        subject: `New Moev trial request — ${venue || name}`,
         html,
       }),
     });
